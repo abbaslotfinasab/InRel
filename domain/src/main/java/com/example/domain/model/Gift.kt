@@ -6,6 +6,7 @@ data class Gift(
     val id: String,                              // Unique ID
     val giverId: String,                         // Who gave the gift
     val receiverId: String,                      // Who received it
+    val relationId: String,                      // Who received it
     val title: String,                           // Gift title e.g. "Teddy Bear"
     val description: String? = null,             // Optional note
     val imageUrl: String? = null,                // Photo of the gift

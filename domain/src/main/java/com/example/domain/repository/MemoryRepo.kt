@@ -8,5 +8,5 @@ interface MemoryRepo {
     suspend fun updateMemory(memory: Memory)
     suspend fun deleteMemory(id: String)
     fun getMemoryById(id: String): Flow<Memory?>
-    fun getAllMemories(): Flow<List<Memory>>
+    fun getAllMemories(userId: String): Flow<List<Memory>>
 }

@@ -4,6 +4,8 @@ import java.time.LocalDateTime
 
 data class DateEvent(
     val id: String,                                  // Unique ID
+    val hostId: String,                              // Unique ID
+    val relationId: String,                              // Unique ID
     val title: String,                               // e.g. "Dinner at Italian Restaurant"
     val description: String? = null,                 // Optional details
     val location: String? = null,                    // e.g. "Rome Cafe, Tehran"

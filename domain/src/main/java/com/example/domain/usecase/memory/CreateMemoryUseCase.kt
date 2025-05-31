@@ -1,4 +1,13 @@
 package com.example.domain.usecase.memory
 
-class CreateMemoryUseCase {
+import com.example.domain.model.Memory
+import com.example.domain.repository.MemoryRepo
+import javax.inject.Inject
+
+class CreateMemoryUseCase @Inject constructor (
+    private val repository: MemoryRepo
+) {
+    suspend operator fun invoke(memory: Memory) {
+        repository.createMemory(memory)
+    }
 }

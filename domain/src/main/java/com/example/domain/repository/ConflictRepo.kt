@@ -8,9 +8,11 @@ interface ConflictRepo {
 
     suspend fun getConflictsForRelation(relationId: String): Flow<List<Conflict>>
 
+    suspend fun getConflictByUserId(userId: String): Flow<List<Conflict>>
+
     suspend fun getConflictById(id: String): Flow<Conflict?>
 
-    suspend fun resolveConflict(id: String, resolutionNote: String)
+    suspend fun updateConflict(conflict: Conflict)
 
     suspend fun deleteConflict(id: String)
 }

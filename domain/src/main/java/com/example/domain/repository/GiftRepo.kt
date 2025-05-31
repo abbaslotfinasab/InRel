@@ -9,6 +9,5 @@ interface GiftRepo{
     suspend fun updateGift(gift: Gift)
     suspend fun deleteGift(id: String)
     fun getGiftById(id: String): Flow<Gift?>
-    fun getAllGifts(): Flow<List<Gift>>
-    fun getGiftsForOccasion(occasionId: String): Flow<List<Gift>>
+    fun getGiftRelationId(relationId: String): Flow<List<Gift>>
 }

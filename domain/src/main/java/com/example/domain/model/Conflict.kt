@@ -2,8 +2,8 @@ package com.example.domain.model
 
 data class Conflict(
     val id: String,
-    val partnerAId: String,
-    val partnerBId: String,
+    val senderId: String,
+    val relationId: String,
     val startTime: Long,  // timestamp
     val endTime: Long?,   // nullable چون ممکنه هنوز تموم نشده باشه
     val category: ConflictCategory,
