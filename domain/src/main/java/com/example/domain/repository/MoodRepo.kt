@@ -8,6 +8,6 @@ interface MoodRepo {
     suspend fun createMood(mood: Mood)
     suspend fun updateMood(mood: Mood)
     suspend fun deleteMood(id: String)
-    fun getMoodById(id: String): Flow<Mood?>
-    fun getAllMoods(): Flow<List<Mood>>
+    fun getMoodById(id: String): Mood?
+    fun getAllMoods(): List<Mood>
 }

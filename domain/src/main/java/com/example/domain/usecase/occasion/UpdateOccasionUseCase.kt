@@ -1,14 +1,18 @@
 package com.example.domain.usecase.occasion
 
+import com.example.domain.dispatcher.DispatcherProvider
 import com.example.domain.model.Occasion
 import com.example.domain.repository.OccasionRepo
+import com.example.domain.usecase.BaseFlowUseCase
 import javax.inject.Inject
 
 class UpdateOccasionUseCase  @Inject constructor(
-    private val repository: OccasionRepo
+    private val repository: OccasionRepo,
+    dispatcherProvider: DispatcherProvider
+) : BaseFlowUseCase<Occasion, Unit>(dispatcherProvider.io) {
 
-) {
-    suspend operator fun invoke(occasion: Occasion) {
-        repository.updateOccasion(occasion)
+
+    override suspend fun execute(params: Occasion) {
+        repository.updateOccasion(params)
     }
 }

@@ -1,14 +1,18 @@
 package com.example.domain.usecase.mood
 
+import com.example.domain.dispatcher.DispatcherProvider
 import com.example.domain.model.Mood
 import com.example.domain.repository.MoodRepo
-import kotlinx.coroutines.flow.Flow
+import com.example.domain.usecase.BaseFlowUseCase
 import javax.inject.Inject
 
 class GetAllMoodsUseCase @Inject constructor(
-    private val repository: MoodRepo
-) {
-    suspend operator fun invoke(): Flow<List<Mood>> {
+    private val repository: MoodRepo,
+    dispatcherProvider: DispatcherProvider
+) : BaseFlowUseCase<Unit, List<Mood>>(dispatcherProvider.io) {
+
+
+    override suspend fun execute(params: Unit): List<Mood> {
         return repository.getAllMoods()
     }
 }

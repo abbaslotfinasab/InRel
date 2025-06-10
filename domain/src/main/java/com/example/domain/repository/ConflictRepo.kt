@@ -6,11 +6,11 @@ import kotlinx.coroutines.flow.Flow
 interface ConflictRepo {
     suspend fun createConflict(conflict: Conflict)
 
-    suspend fun getConflictsForRelation(relationId: String): Flow<List<Conflict>>
+    suspend fun getConflictsForRelation(relationId: String): List<Conflict>
 
-    suspend fun getConflictByUserId(userId: String): Flow<List<Conflict>>
+    suspend fun getConflictByUserId(userId: String): List<Conflict>
 
-    suspend fun getConflictById(id: String): Flow<Conflict?>
+    suspend fun getConflictById(id: String): Conflict?
 
     suspend fun updateConflict(conflict: Conflict)
 

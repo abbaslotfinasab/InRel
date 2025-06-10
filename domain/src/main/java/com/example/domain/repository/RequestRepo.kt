@@ -11,9 +11,9 @@ interface RequestRepo {
 
     suspend fun deleteRequest(id: String)
 
-    fun getRequestById(id: String): Flow<Request?>
+    fun getRequestById(id: String): Request?
 
-    fun getRequestsByUser(userId: String): Flow<List<Request>>
+    fun getRequestsByUser(userId: String): List<Request>
 
-    fun getAllRequests(): Flow<List<Request>>
+    fun getAllRequests(): List<Request>
 }

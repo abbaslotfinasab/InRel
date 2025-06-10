@@ -7,7 +7,7 @@ interface DateEventRepo {
     suspend fun createDateEvent(event: DateEvent)
     suspend fun updateDateEvent(event: DateEvent)
     suspend fun deleteDateEvent(id: String)
-    fun getDateEventById(id: String): Flow<DateEvent?>
-    fun getDateEventsByRelationId(relationId: String): Flow<List<DateEvent>>
-    fun getDateEventsByUserId(userId: String): Flow<List<DateEvent>>
+    fun getDateEventById(id: String): DateEvent?
+    fun getDateEventsByRelationId(relationId: String): List<DateEvent>
+    fun getDateEventsByUserId(userId: String): List<DateEvent>
 }

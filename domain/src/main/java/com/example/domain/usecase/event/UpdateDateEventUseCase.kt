@@ -1,13 +1,18 @@
 package com.example.domain.usecase.event
 
+import com.example.domain.dispatcher.DispatcherProvider
 import com.example.domain.model.DateEvent
 import com.example.domain.repository.DateEventRepo
+import com.example.domain.usecase.BaseFlowUseCase
 import javax.inject.Inject
 
 class UpdateDateEventUseCase @Inject constructor(
-    private val dateEventRepository: DateEventRepo
-) {
-    suspend operator fun invoke(event: DateEvent) {
-        dateEventRepository.updateDateEvent(event)
+    private val dateEventRepository: DateEventRepo,
+    dispatcherProvider: DispatcherProvider
+) : BaseFlowUseCase<DateEvent, Unit>(dispatcherProvider.io) {
+
+
+    override suspend fun execute(params: DateEvent) {
+        dateEventRepository.updateDateEvent(params)
     }
 }

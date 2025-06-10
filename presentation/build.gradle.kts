@@ -61,7 +61,6 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
 
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)

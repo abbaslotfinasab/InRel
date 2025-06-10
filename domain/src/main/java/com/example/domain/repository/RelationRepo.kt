@@ -7,7 +7,7 @@ interface RelationRepo {
     suspend fun createRelation(relation: Relation)
     suspend fun updateRelation(relation: Relation)
     suspend fun deleteRelation(id: String)
-    fun getRelationById(id: String): Flow<Relation?>
-    fun getRelationsByUser(userId: String): Flow<Relation?>
-    fun getAllRelations(): Flow<MutableList<Relation>>
+    fun getRelationById(id: String): Relation?
+    fun getRelationsByUser(userId: String): Relation?
+    fun getAllRelations(): List<Relation>
 }

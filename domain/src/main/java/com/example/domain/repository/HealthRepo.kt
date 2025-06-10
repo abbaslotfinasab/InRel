@@ -7,6 +7,6 @@ interface HealthRepo {
     suspend fun createHealthEntry(entry: HealthEntry)
     suspend fun updateHealthEntry(entry: HealthEntry)
     suspend fun deleteHealthEntry(id: String)
-    fun getHealthEntryById(id: String): Flow<HealthEntry?>
-    fun getHealthEntriesByUserId(userId: String): Flow<List<HealthEntry>>
+    fun getHealthEntryById(id: String): HealthEntry?
+    fun getHealthEntriesByUserId(userId: String): List<HealthEntry>
 }

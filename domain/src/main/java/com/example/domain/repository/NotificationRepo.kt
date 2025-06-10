@@ -7,9 +7,9 @@ interface NotificationRepo {
 
     suspend fun sendNotification(notification: Notification)
 
-    suspend fun getNotificationsForUser(userId: String): Flow<List<Notification>>
+    suspend fun getNotificationsForUser(userId: String): List<Notification>
 
-    suspend fun getAllNotifications(): Flow<List<Notification>>
+    suspend fun getAllNotifications(): List<Notification>
 
     suspend fun markAsRead(notificationId: String)
 

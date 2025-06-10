@@ -14,10 +14,8 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":core"))
     implementation(libs.kotlinx.coroutines.core)
     implementation (libs.dagger)
     kapt (libs.google.dagger.compiler)
-
 
 }

@@ -8,6 +8,6 @@ interface OccasionRepo {
     suspend fun createOccasion(occasion: Occasion)
     suspend fun updateOccasion(occasion: Occasion)
     suspend fun deleteOccasion(id: String)
-    fun getOccasionById(id: String): Flow<Occasion?>
-    fun getAllOccasions(): Flow<List<Occasion>>
+    fun getOccasionById(id: String): Occasion?
+    fun getAllOccasions(): List<Occasion>
 }

@@ -5,14 +5,14 @@ import kotlinx.coroutines.flow.Flow
 
 interface SurveyRepo {
 
-    suspend fun submitSurvey(survey: Survey): Boolean
+    suspend fun submitSurvey(survey: Survey)
 
-    suspend fun getSurveyById(id: String): Flow<Survey?>
+    suspend fun getSurveyById(id: String):Survey?
 
-    suspend fun getAllSurveys(): Flow<List<Survey>>
+    suspend fun getAllSurveys(): List<Survey>
 
-    suspend fun deleteSurvey(id: String): Boolean
+    suspend fun deleteSurvey(id: String)
 
-    suspend fun updateSurvey(survey: Survey): Boolean
+    suspend fun updateSurvey(survey: Survey)
 
 }

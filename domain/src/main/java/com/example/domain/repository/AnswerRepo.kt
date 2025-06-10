@@ -1,14 +1,15 @@
 package com.example.domain.repository
 
 import com.example.domain.model.Answer
-import kotlinx.coroutines.flow.Flow
+import com.example.domain.utile.Result
+
 
 interface AnswerRepo {
-    suspend fun submitAnswer(answer: Answer)
-    suspend fun updateAnswer(answer: Answer)
-    suspend fun deleteAnswer(id: String)
-    fun getAnswerById(id: String): Flow<Answer?>
-    fun getAnswersByUser(userId: String): Flow<List<Answer>>
-    fun getAnswersByRelation(relationId: String): Flow<List<Answer>>
-    fun getAnswersByQuestion(questionId: String): Flow<List<Answer>>
+    suspend fun createAnswer(answer: Answer):Result<Unit>
+    suspend fun updateAnswer(answer: Answer):Result<Unit>
+    suspend fun deleteAnswer(id: String):Result<Unit>
+    suspend fun getAnswerById(id: String): Result<Answer>
+    suspend fun getAnswersByUser(userId: String): Result<List<Answer>>
+    suspend fun getAnswersByRelation(relationId: String): Result<List<Answer>>
+    suspend fun getAnswersByQuestion(questionId: String): Result<List<Answer>>
 }

@@ -7,5 +7,5 @@ data class Answer(
     val questionId: String,
     val userId: String,
     val text: String,
-    val answeredAt: LocalDateTime? = null
+    val createdAt: LocalDateTime?
 )

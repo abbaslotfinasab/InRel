@@ -6,11 +6,11 @@ import kotlinx.coroutines.flow.Flow
 interface MediaRepo {
     suspend fun uploadMedia(media: Media)
 
-    suspend fun getMediaByRelation(relationId: String): Flow<List<Media>>
+    suspend fun getMediaByRelation(relationId: String): List<Media>
 
-    suspend fun getMediaByUserId(userId: String): Flow<List<Media>>
+    suspend fun getMediaByUserId(userId: String): List<Media>
 
-    suspend fun getMediaById(id: String): Flow<Media?>
+    suspend fun getMediaById(id: String): Media?
 
     suspend fun deleteMedia(id: String)
 

@@ -1,14 +1,19 @@
 package com.example.domain.usecase.media
 
+import com.example.domain.dispatcher.DispatcherProvider
 import com.example.domain.model.Media
 import com.example.domain.repository.MediaRepo
+import com.example.domain.usecase.BaseFlowUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetMediaByRelationUseCase @Inject constructor(
-    private val repository: MediaRepo
-) {
-    suspend operator fun invoke(relationId: String): Flow<List<Media>> {
-        return repository.getMediaByRelation(relationId)
+    private val repository: MediaRepo,
+    dispatcherProvider: DispatcherProvider
+) : BaseFlowUseCase<String, List<Media>>(dispatcherProvider.io) {
+
+
+    override suspend fun execute(params: String): List<Media> {
+        return repository.getMediaByRelation(params)
     }
 }
